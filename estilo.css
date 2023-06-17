@@ -1,0 +1,27 @@
+
+table {
+    border-collapse: collapse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+  }
+.vazio{
+  background: #000;
+  color: aliceblue;
+}
+  td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .preenchida {
+    background-color: #ccc;
+  }
+  
+  input {
+    margin-bottom: 10px;
+  }

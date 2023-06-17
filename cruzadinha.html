@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo de Palavras Cruzadas</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+  <h1>Jogo de Palavras Cruzadas</h1>
+  Insira uma palavra:<input id="input_palavra">
+  <br>
+  <button onclick="verificapalavra()">Verificar Palavra</button>
+  <table>
+    <!-- PRIMEIRA LINHA -->
+    <tr>
+      <td class="vazio" id="">1</td>
+      <td id="ram_r"></td>
+      <td id="ram_a"></td>
+      <td id="ram_m"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- SEGUNDA LINHA -->
+      <td class="vazio" id=""></td>
+      <td id="rom_o"></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_e"></td>
+      <td id="eprom_p"></td>
+      <td id="eprom_r"></td>
+      <td id="eprom_o"></td>
+      <td id="eprom_m"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- TERCEIRA LINHA -->
+      <td id="dma_d"></td>
+      <td id="rom_m"></td>
+      <td id="dma_a"></td>
+      <td id="memoria_m"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- QUARTA LINHA -->
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_o"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="quad_core_q"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- QUINTA LINHA -->
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_r"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="cpu_c"></td>
+      <td id="cpu_p"></td>
+      <td id="quad_core_u"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- QUINTA LINHA -->
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_i"></td>
+      <td id="i5_5"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="address_bus_a"></td>
+      <td id="address_bus_d"></td>
+      <td id="address_bus_dd"></td>
+      <td id="address_bus_r"></td>
+      <td id="address_bus_e"></td>
+      <td id="address_bus_s"></td>
+      <td id="address_bus_ss"></td>
+      <td class="vazio" id=""></td>
+      <td id="address_bus_b"></td>
+      <td id="address_bus_u"></td>
+      <td id="address_bus_sss"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 6 -->
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_a"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="quad_core_d"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="ula_l"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 7 -->
+      <td class="vazio" id=""></td>
+      <td id="chip_c"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="ula_a"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 8 -->
+      <td class="vazio" id=""></td>
+      <td id="chip_h"></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_d"></td>
+      <td id="dual_core_u"></td>
+      <td id="dual_core_a"></td>
+      <td id="dual_core_l"></td>
+      <td class="vazio" id=""></td>
+      <td id="dual_core_c"></td>
+      <td id="dual_core_o"></td>
+      <td id="dual_core_r"></td>
+      <td id="dual_core_e"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="threads_t"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 9 -->
+      <td class="vazio" id=""></td>
+      <td id="chip_i"></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_de_e"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="quad_core_o"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="threads_h"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 10 -->
+      <td class="vazio" id=""></td>
+      <td id="chip_p"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio"id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="registradores_r"></td>
+      <td id="registradores_e"></td>
+      <td id="registradores_g"></td>
+      <td id="registradores_i"></td>
+      <td id="registradores_s"></td>
+      <td id="registradores_t"></td>
+      <td id="registradores_rr"></td>
+      <td id="registradores_a"></td>
+      <td id="registradores_d"></td>
+      <td id="registradores_o"></td>
+      <td id="registradores_rrr"></td>
+      <td id="registradores_es"></td>
+      <td id="registradores_ss"></td>
+    </tr>
+    <tr>
+      <!-- LINHA 11 -->
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_massa_m"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="quad_core_e"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="i7_7"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="threads_e"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio"id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 12 -->
+      <td class="vazio" id=""></td>
+      <td id="select_s"></td>
+      <td id="data_bus_d"></td>
+      <td id="memoria_massa_a"></td>
+      <td id="data_bus_t"></td>
+      <td id="data_bus_a"></td>
+      <td class="vazio" id=""></td>
+      <td id="data_bus_b"></td>
+      <td id="data_bus_u"></td>
+      <td id="data_bus_s"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="threads_a"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 13 -->
+      <td class="vazio" id=""></td>
+      <td id="select_e"></td>
+      <td class="vazio" id=""></td>
+      <td id="memoria_s"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="threads_d"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 14 -->
+      <td id="flash_f"></td>
+      <td id="flash_l"></td>
+      <td id="flash_a"></td>
+      <td id="memoria_ss"></td>
+      <td id="flash_h"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td id="threads_s"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 15 -->
+      <td class="vazio" id=""></td>
+      <td id="select_ee"></td>
+      <td id="cache_c"></td>
+      <td id="memoria_massa_aa"></td>
+      <td id="cache_cc"></td>
+      <td id="cache_h"></td>
+      <td id="cache_e"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 16 -->
+      <td class="vazio" id=""></td>
+      <td id="select_c"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 17 -->
+      <td class="vazio" id=""></td>
+      <td id="select_t"></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+    <tr>
+      <!-- LINHA 18 -->
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+      <td class="vazio" id=""></td>
+    </tr>
+  </table>
+<script>
+  function verificapalavra(){
+    var palavra = (input_palavra.value.toUpperCase());
+
+    if (palavra == "RAM"){
+      ram_r.innerHTML = `R`
+      ram_a.innerHTML = `A`
+      ram_m.innerHTML = `M`
+    }else if (palavra == "ROM"){
+      ram_r.innerHTML = `R`
+      rom_o.innerHTML = `O`
+      rom_m.innerHTML = `M`
+    }else if ( palavra == "DMA"){
+      dma_d.innerHTML = `D`
+      rom_m.innerHTML = `M`
+      dma_a.innerHTML = `A`
+    }else if (palavra == "MEMÓRIA DE MASSA"){
+      ram_m.innerHTML = `M`
+      memoria_e.innerHTML = `E`
+      memoria_m.innerHTML = `M`
+      memoria_o.innerHTML = `Ó`
+      memoria_r.innerHTML = `R`
+      memoria_i.innerHTML = `I`
+      memoria_a.innerHTML = `A`
+
+      memoria_d.innerHTML = `D`
+      memoria_de_e.innerHTML = `E`
+
+      memoria_massa_m.innerHTML = `M`
+      memoria_massa_a.innerHTML = `A`
+      memoria_s.innerHTML = `S`
+      memoria_ss.innerHTML = `S`
+      memoria_massa_aa.innerHTML = `A`
+
+    }else if (palavra == "EPROM"){
+      memoria_e.innerHTML = `E`
+      eprom_p.innerHTML = `P`
+      eprom_r.innerHTML = `R`
+      eprom_o.innerHTML = `O`
+      eprom_m.innerHTML = `M`
+
+    }else if (palavra == "ADDRESS BUS"){
+      address_bus_a.innerHTML = `A`;
+      address_bus_d.innerHTML = `D`;
+      address_bus_dd.innerHTML = `D`;
+      address_bus_r.innerHTML = `R`;
+      address_bus_e.innerHTML = `E`;
+      address_bus_s.innerHTML = `S`;
+      address_bus_ss.innerHTML = `S`;
+        
+      address_bus_b.innerHTML = `B`;
+      address_bus_u.innerHTML = `U`;
+      address_bus_sss.innerHTML = `S`;
+
+    }else if (palavra == "DUAL CORE"){
+      memoria_d.innerHTML = `D`
+      dual_core_u.innerHTML = `U`
+      dual_core_a.innerHTML = `A`
+      dual_core_l.innerHTML = `L`
+
+      dual_core_c.innerHTML = `C`
+      dual_core_o.innerHTML = `O`
+      dual_core_r.innerHTML = `R`
+      dual_core_e.innerHTML = `E`
+    }else if (palavra == "REGISTRADORES"){
+      registradores_r.innerHTML = `R`;
+      registradores_e.innerHTML = `E`;
+      registradores_g.innerHTML = `G`;
+      registradores_i.innerHTML = `I`;
+      registradores_s.innerHTML = `S`;
+      registradores_t.innerHTML = `T`;
+      registradores_rr.innerHTML = `R`;
+      registradores_a.innerHTML = `A`;
+      registradores_d.innerHTML = `D`;
+      registradores_o.innerHTML = `O`;
+      registradores_rrr.innerHTML = `R`;
+      registradores_es.innerHTML = `E`;
+      registradores_ss.innerHTML = `S`;
+
+    }else if(palavra == "DATA BUS"){
+      data_bus_d.innerHTML = `D`;
+      memoria_massa_a.innerHTML = `A`;
+      data_bus_t.innerHTML = `T`;
+      data_bus_a.innerHTML = `A`;
+
+      data_bus_b.innerHTML = `B`;
+      data_bus_u.innerHTML = `U`;
+      data_bus_s.innerHTML = `S`;
+
+    }else if(palavra == "FLASH"){
+      flash_f.innerHTML = `F`;
+      flash_l.innerHTML = `L`;
+      flash_a.innerHTML = `A`;
+      memoria_ss.innerHTML = `S`;
+      flash_h.innerHTML = `H`;
+
+    }else if(palavra == "CACHE"){
+    cache_c.innerHTML = `C`
+    memoria_massa_aa.innerHTML = `A`
+    cache_cc.innerHTML = `C`
+    cache_h.innerHTML = `H`
+    cache_e.innerHTML = `E`
+
+  }else if(palavra == "QUAD CORE"){
+    quad_core_q.innerHTML = `Q`
+    quad_core_u.innerHTML = `U`
+    address_bus_a.innerHTML = `A`
+    quad_core_d.innerHTML = `D`
+
+    dual_core_c.innerHTML = `C`
+    quad_core_o.innerHTML = `O`
+    registradores_r.innerHTML = `R`
+    quad_core_e.innerHTML = `E`
+
+  }else if(palavra == "THREADS"){
+    threads_t.innerHTML = `T`
+    threads_h.innerHTML = `H`
+    registradores_rrr.innerHTML = `R`
+    threads_e.innerHTML = `E`
+    threads_a.innerHTML = `A`
+    threads_d.innerHTML = `D`
+    threads_s.innerHTML = `S`
+
+  }else if(palavra == "ULA"){
+    address_bus_u.innerHTML = `U`
+    ula_l.innerHTML = `L`
+    ula_a.innerHTML = `A`
+
+  }else if(palavra == "CPU"){
+    cpu_c.innerHTML = `C`
+    cpu_p.innerHTML = `P`
+    quad_core_u.innerHTML = `U`
+
+  }else if(palavra == "I5"){
+    memoria_i.innerHTML = `I`
+    i5_5.innerHTML = `5`
+
+  }else if(palavra == "I7"){
+    registradores_i.innerHTML = `I`
+    i7_7.innerHTML = `7`
+
+  }else if(palavra == "CHIP SELECT"){
+    chip_c.innerHTML = `C`
+    chip_h.innerHTML = `H`
+    chip_i.innerHTML = `I`
+    chip_p.innerHTML = `P`
+
+    select_s.innerHTML = `S`
+    select_e.innerHTML = `E`
+    flash_l.innerHTML = `L`
+    select_ee.innerHTML = `E`
+    select_c.innerHTML = `C`
+    select_t.innerHTML = `T`
+  }
+    else{
+      alert("Palavra Inserida Errada!");
+    }
+  }
+</script>

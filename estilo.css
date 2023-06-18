@@ -42,7 +42,7 @@ body {
   height: 34px;
   background: rgba(231, 238, 240, 0.92);
   border-radius: 8px;
-  border: none;
+  /* border: none; */
   text-align: center;
   margin-left: -34px;
   margin-bottom: 10px;

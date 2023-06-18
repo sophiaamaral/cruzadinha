@@ -1,38 +1,101 @@
-body{
-  /* background-color: #000; */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Imprima&family=Inconsolata:wght@700;900&family=Inter:wght@700&family=Montserrat&family=Open+Sans:ital,wght@1,300&family=Roboto&family=Roboto+Condensed&display=swap');
+/*font-family: 'Anton', sans-serif;
+font-family: 'Imprima', sans-serif;
+font-family: 'Inconsolata', monospace;
+font-family: 'Inter', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;*/
+
+body {
+  background-color: #d88ef8;
+  color: rgb(25, 13, 37);
+  overflow-x: hidden;
+}
+
+.palavras-cruzadas {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.dicas {
+  align-self: flex-start;
+  font-family: 'Anton', sans-serif;
+}
+
+.dicas button {
+  width: 141px;
+  height: 38px;
+  background: rgba(141, 58, 243, 0.97);
+  border-radius: 6px;
+  border: none;
+  color: aliceblue;
+  font-family: 'Anton', sans-serif;
+  margin-left: 24px;
+}
+
+.dicas input {
+  width: 250px;
+  height: 34px;
+  background: rgba(231, 238, 240, 0.92);
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  margin-left: -34px;
+  margin-bottom: 10px;
+}
+.dicas select{
+  width: 250px;
+  height: 34px;
+  background: rgba(231, 238, 240, 0.92);
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+  margin-left: -46px;
+  font-family: 'Anton', sans-serif;
+}
+.subtitulo{
+  margin-left: 10px;
 }
 table {
-    border-collapse: collapse;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-  }
-.vazio{
+  border-collapse: collapse;
+}
+
+.titulo {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+}
+
+.vazio {
   background: #000;
   color: aliceblue;
 }
-  td {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #000;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .preenchida {
-    background-color: #ccc;
-  }
-  
-  input {
-    margin-bottom: 10px;
-  }
-  .error{
 
-    border: 2px solid red;
+td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  text-align: center;
+  font-weight: bold;
 }
 
-.valid{
+/* .preenchida {
+  background-color: #ccc;
+}*/
 
-    border: 2px solid rgb(0, 255, 0);
+.error {
+  border: 2px solid red;
+}
+
+.valid {
+  border: 2px solid rgb(0, 255, 0);
+}
+.lista{
+  margin-left: -704px;
+  margin-top: -298px;
+  font-family: 'Imprima', sans-serif;
+  font-size: 20px;
 }

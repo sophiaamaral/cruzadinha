@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Jogo de Palavras Cruzadas</title>
   <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
-
 <body>
-  <h1>Jogo de Palavras Cruzadas</h1>
-  Insira uma palavra:<input id="input_palavra">
+  <h1 class="titulo">Jogo de Palavras Cruzadas</h1>
+<section class="palavras-cruzadas">
+  <div class="dicas">
+  <h2>Insira uma palavra: </h2><input id="input_palavra">
   <br>
   <button onclick="verificapalavra()">Verificar Palavra</button><br><br>
-
-
-  <div class="dicas">
-    <h2>Veja as dicas </h2>
+    <h2 class="subtitulo">Veja as dicas </h2>
     <select id="dicas" onchange="verificar()">
+<<<<<<< HEAD:cruzadinha-arq-comp-rayane-sophia-1ADSA.html
+      <option value="1">Dica: 1</option>
+      <option value="2">Dica: 2</option>
+      <option value="3">Dica: 3</option>
+      <option value="4">Dica: 4</option>
+      <option value="5">Dica: 5</option>
+      <option value="6">Dica: 6</option>
+      <option value="7">Dica: 7</option>
+      <option value="8">Dica: 8</option>
+      <option value="9">Dica: 9</option>
+      <option value="10">Dica: 10</option>
+      <option value="11">Dica: 11</option>
+      <option value="12">Dica: 12</option>
+      <option value="13">Dica: 13</option>
+      <option value="14">Dica: 14</option>
+      <option value="15">Dica: 15</option>
+      <option value="16">Dica: 16</option>
+      <option value="17">Dica: 17</option>
+      <option value="18">Dica: 18</option>
+=======
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -34,13 +51,10 @@
       <option value="16">16</option>
       <option value="17">17</option>
       <option value="18">18</option>
+>>>>>>> dea0aa0a98c00e3e93d064f6cddaf2f3c03d293a:cruzadinha_Rayane_Sophia.html
     </select><br>
   </div>
-
-  <div class="lista" id="Dicass" style="display: none;">
-    <ul id="Lista_dicas"></ul>
-  </div>
-
+<div class="tabela">
   <table>
     <!-- PRIMEIRA LINHA -->
     <tr>
@@ -499,31 +513,27 @@
       <td class="vazio" id=""></td>
     </tr>
   </table>
+  <div class="lista" id="Dicass" style="display: none;">
+    <ul id="Lista_dicas"></ul>
+  </div>
+</section>
 </body>
-
-
-  <script>
-
-
-    function verificapalavra() {
+<script>
+  function verificapalavra() {
       // var palavra = (input_palavra.value);
 
-      var palavra = document.getElementById('input_palavra').value;
+      var palavra = document.getElementById('input_palavra').value.toUpperCase();
       var inputElement = document.getElementById('input_palavra');
 
-
-
-
-      if (palavra == "ram" || palavra == "RAM") {
+      if (palavra == "RAM") {
         ram_r.innerHTML = `R`
         ram_a.innerHTML = `A`
         ram_m.innerHTML = `M`
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-
-      } else if (palavra == "rom" || palavra == "ROM") {
+      } 
+      else if (palavra == "ROM") {
         ram_r.innerHTML = `R`
         rom_o.innerHTML = `O`
         rom_m.innerHTML = `M`
@@ -531,15 +541,15 @@
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
 
-      } else if (palavra == "dma" || palavra == "DMA") {
+      } else if (palavra == "DMA") {
         dma_d.innerHTML = `D`
         rom_m.innerHTML = `M`
         dma_a.innerHTML = `A`
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "memória de massa" || palavra == "MEMÓRIA DE MASSA") {
+      } 
+      else if (palavra == "MEMÓRIA DE MASSA") {
         ram_m.innerHTML = `M`
         memoria_e.innerHTML = `E`
         memoria_m.innerHTML = `M`
@@ -559,8 +569,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "eprom" || palavra == "EPROM") {
+      } 
+      else if (palavra == "EPROM") {
         memoria_e.innerHTML = `E`
         eprom_p.innerHTML = `P`
         eprom_r.innerHTML = `R`
@@ -569,9 +579,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-
-      } else if (palavra == "address bus" || palavra == "ADDRESS BUS") {
+      } 
+      else if (palavra == "ADDRESS BUS") {
         address_bus_a.innerHTML = `A`;
         address_bus_d.innerHTML = `D`;
         address_bus_dd.innerHTML = `D`;
@@ -586,9 +595,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-
-      } else if (palavra == "dual core" || palavra == "DUAL CORE") {
+      } 
+      else if (palavra == "DUAL CORE") {
         memoria_d.innerHTML = `D`
         dual_core_u.innerHTML = `U`
         dual_core_a.innerHTML = `A`
@@ -601,8 +609,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "registradores" || palavra == "REGISTRADORES") {
+      } 
+      else if (palavra == "REGISTRADORES") {
         registradores_r.innerHTML = `R`;
         registradores_e.innerHTML = `E`;
         registradores_g.innerHTML = `G`;
@@ -619,9 +627,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-
-      } else if (palavra == "data bus" || palavra == "DATA BUS") {
+      } 
+      else if (palavra == "DATA BUS") {
         data_bus_d.innerHTML = `D`;
         memoria_massa_a.innerHTML = `A`;
         data_bus_t.innerHTML = `T`;
@@ -633,8 +640,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "flash" || palavra == "FLASH") {
+      } 
+      else if (palavra == "FLASH") {
         flash_f.innerHTML = `F`;
         flash_l.innerHTML = `L`;
         flash_a.innerHTML = `A`;
@@ -643,8 +650,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "cache" || palavra == "CACHE") {
+      } 
+      else if (palavra == "CACHE") {
         cache_c.innerHTML = `C`
         memoria_massa_aa.innerHTML = `A`
         cache_cc.innerHTML = `C`
@@ -653,8 +660,8 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "quad core" || palavra == "QUAD CORE") {
+      } 
+      else if (palavra == "QUAD CORE") {
         quad_core_q.innerHTML = `Q`
         quad_core_u.innerHTML = `U`
         address_bus_a.innerHTML = `A`
@@ -668,7 +675,8 @@
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
 
-      } else if (palavra == "threads" || palavra == "THREADS") {
+      } 
+      else if (palavra == "THREADS") {
         threads_t.innerHTML = `T`
         threads_h.innerHTML = `H`
         registradores_rrr.innerHTML = `R`
@@ -679,38 +687,38 @@
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "ula" || palavra == "ULA") {
+      } 
+      else if (palavra == "ULA") {
         address_bus_u.innerHTML = `U`
         ula_l.innerHTML = `L`
         ula_a.innerHTML = `A`
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "cpu" || palavra == "CPU") {
+      } 
+      else if (palavra == "CPU") {
         cpu_c.innerHTML = `C`
         cpu_p.innerHTML = `P`
         quad_core_u.innerHTML = `U`
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "i5" || palavra == "I5") {
+      } 
+      else if (palavra == "I5") {
         memoria_i.innerHTML = `I`
         i5_5.innerHTML = `5`
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "i7" || palavra == "I7") {
+      } 
+      else if (palavra == "I7") {
         registradores_i.innerHTML = `I`
         i7_7.innerHTML = `7`
 
         inputElement.classList.remove('error');
         inputElement.classList.add('valid');
-
-      } else if (palavra == "chip select" || palavra == "CHIP SELECT") {
+      } 
+      else if (palavra == "CHIP SELECT") {
         chip_c.innerHTML = `C`
         chip_h.innerHTML = `H`
         chip_i.innerHTML = `I`
@@ -727,13 +735,12 @@
         inputElement.classList.add('valid');
       }
       else {
-
         alert("Palavra Inserida Errada!");
-
         inputElement.classList.remove('valid');
         inputElement.classList.add('error');
 
-      }}
+      }
+  }
 
 
       function verificar() {
@@ -744,24 +751,41 @@
         Lista_dicasElement.innerHTML = ''; // Limpar conteúdo anterior
 
         if (selectElement.value === '1') {
-          Lista_dicasElement.innerHTML = `<p> 1- Memória somente para leitura <p>`;
+          Lista_dicasElement.innerHTML = `1- Memória somente para leitura.`;
         }
         else if (selectElement.value === '2') {
-          Lista_dicasElement.innerHTML = `<p>  2- Tem como função armazenar grandes quantidades de informações <p>`;
+          Lista_dicasElement.innerHTML = `2- Tem como função armazenar grandes quantidades de informações.`;
         }
         else if (selectElement.value === '3') {
-          Lista_dicasElement.innerHTML = ` <p>  3-Memória de acesso aleatório <p><br>`;
+          Lista_dicasElement.innerHTML = `3- Memória de acesso aleatório.`;
         }
         else if (selectElement.value === '4') {
-          Lista_dicasElement.innerHTML = `<p> 4- Permite que o dispositivo de rede mova os dados do pacote diretamente <br>para a memória do sitema, reduzindo
-        a utilização da CPU<br><br> <p>`;
+          Lista_dicasElement.innerHTML = `4- Permite que o dispositivo de rede mova os dados do pacote diretamente 
+            <br>para a memória do sitema, reduzindo a utilização da CPU.`;
         }
         else if (selectElement.value === '5') {
-          Lista_dicasElement.innerHTML = `
-                <p> 5- é capaz de armazenar as informações, para serem recuperadas e utilizadas posteriormente, mesmo depois de
-        alimentação ter sido interrompida <br><p>`;
+          Lista_dicasElement.innerHTML = `5- É capaz de armazenar as informações, para serem recuperadas<br>
+          e utilizadas posteriormente, mesmo depois de alimentação<br>
+          ter sido interrompida.`;
 
         } else if (selectElement.value === '6') {
+<<<<<<< HEAD:cruzadinha-arq-comp-rayane-sophia-1ADSA.html
+          Lista_dicasElement.innerHTML = `6- Processador que possui quatro nucleos dentro da mesma CPU.`;
+        } 
+        else if (selectElement.value === '7') {
+          Lista_dicasElement.innerHTML = `7- O componente recebe um determinado volume de dados em um<br>padrão 
+            binário e tem a função de responder a esse volume processando<br>a informação com base em 
+            instruções armazenadas<br> em sua memória interna.`;
+        } 
+        else if (selectElement.value === '8') {
+          Lista_dicasElement.innerHTML = `8- Implementa as operações lógicas (NOT, AND, OR, XOR) e aritméticas 
+          <br>geralmente adição, subtração, multiplicação, divisão.`;
+        } 
+        else if (selectElement.value === '9') {
+          Lista_dicasElement.innerHTML = `9- Seis núcleos e 12 threads, com um clock que vai de 2,9GHz a 4,3GHz. 
+          <br>São 12MB de memória cache com o padrão DDR4-2666. O lado negativo<br> é que ele não tem não tem placa 
+          de vídeo integrada e, assim, o usuário<br> que optar por ele vai precisar comprar também uma GPU dedicada.`;
+=======
           Lista_dicasElement.innerHTML = `
                 <p> 6- Processador que possui quatro nucleos dentro da mesma CPU<p>`;
         } else if (selectElement.value === '7') {
@@ -776,47 +800,47 @@
           9- Seis núcleos e 12 threads, com um clock que vai de 2,9GHz a 4,3GHz. São 12MB de memória cache com o padrão
         DDR4-2666. <BR>O lado negativo é que ele não tem não tem placa de vídeo integrada e, assim, o usuário que optar
         por ele vai precisar comprar também uma GPU dedicada<br><br>`;
+>>>>>>> dea0aa0a98c00e3e93d064f6cddaf2f3c03d293a:cruzadinha_Rayane_Sophia.html
         }
         else if (selectElement.value === '10') {
-          Lista_dicasElement.innerHTML = `
-          10- Barramento que transportam os sinais usados para indicar o endereço de posições da memória do
-        computador<br><br>`;
+          Lista_dicasElement.innerHTML = `10- Barramento que transportam os sinais usados para indicar o endereço 
+          <br>de posições da memória do computador.`;
         }
         else if (selectElement.value === '11') {
-          Lista_dicasElement.innerHTML = `
-          11- Entrada de controle de muitos circuitos integrados<br><br>`;
+          Lista_dicasElement.innerHTML = `11- Entrada de controle de muitos circuitos integrados.`;
         }
         else if (selectElement.value === '12') {
-          Lista_dicasElement.innerHTML = `
-          12- É um pequeno programa que trabalha como um subsistema, <BR>sendo uma forma de um processo se autodividir em
-        dua ou mais tarefas<br><br>`;
+          Lista_dicasElement.innerHTML = `12- É um pequeno programa que trabalha como um subsistema, 
+          <br>sendo uma forma de um processo se autodividir em duas ou mais tarefas.`;
         }
         else if (selectElement.value === '13') {
-          Lista_dicasElement.innerHTML = `
-          13- Um processador que possui dois núcleos`;
+          Lista_dicasElement.innerHTML = `13- Um processador que possui dois núcleos`;
         }
         else if (selectElement.value === '14') {
-          Lista_dicasElement.innerHTML = `
-          14-é um processador de 8 núcleos e 8 threads que consume 95W. A frequência base de clock é de 3,6GHz e chega a
-        4,9GHz com o boost,<br> valor alto e semelhante com as velocidades das CPUs de gerações mais atuais. A CPU
-        possui placa de vídeo integrada UHD Intel 630.<br><br>`;
+          Lista_dicasElement.innerHTML = `14- É um processador de 8 núcleos e 8 threads que consume 95W. 
+          <br>A frequência base de clock é de 3,6GHz e chega a 4,9GHz com o boost,<br> valor alto e 
+          semelhante com as velocidades das CPUs de gerações mais<br> atuais. A CPU possui placa de vídeo 
+          integrada UHD Intel 630.`;
         }
         else if (selectElement.value === '15') {
-          Lista_dicasElement.innerHTML = `
-          15-Correspode a uma memória local rápida do microprocessador, destinada ao armazenamento de dados e instruções e
-        atuam como entradas e saídas para as operações da CPU`;
+          Lista_dicasElement.innerHTML = `15- Correspode a uma memória local rápida do microprocessador, 
+          <br>destinada ao armazenamento de dados e instruções e atuam<br> 
+          como entradas e saídas para as operações da CPU.`;
         }
         else if (selectElement.value === '16') {
-          Lista_dicasElement.innerHTML = `
-          16- Descreve o sitema responsável pela transmissão de dados entre<br> os componentes de uma rede, <br><br>`;
+          Lista_dicasElement.innerHTML = `16- Descreve o sitema responsável pela transmissão de dados 
+          <br>entre os componentes de uma rede.`;
         }
         else if (selectElement.value === '17') {
-          Lista_dicasElement.innerHTML = `
-          17- é uma tecnologia de armazenamento de dados que usa uma memória não volátil`;
+          Lista_dicasElement.innerHTML = `17- É uma tecnologia de armazenamento de dados que usa uma<br> memória não volátil.`;
         }
         else if (selectElement.value === '18') {
+<<<<<<< HEAD:cruzadinha-arq-comp-rayane-sophia-1ADSA.html
+          Lista_dicasElement.innerHTML = `18- É uma espécie de biblioteca que existe dentro de computadores<br> e dispositivos móveis.`;
+=======
           Lista_dicasElement.innerHTML = `
           18-É uma espécie de biblioteca que existe dentro de computadores e dispositivos móveis`;
+>>>>>>> dea0aa0a98c00e3e93d064f6cddaf2f3c03d293a:cruzadinha_Rayane_Sophia.html
         }
 
 

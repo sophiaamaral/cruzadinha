@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Jogo de Palavras Cruzadas</title>
   <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
+
 <body>
   <h1>Jogo de Palavras Cruzadas</h1>
   Insira uma palavra:<input id="input_palavra">
   <br>
-  <button onclick="verificapalavra()">Verificar Palavra</button>
+  <button onclick="verificapalavra()">Verificar Palavra</button><br><br>
+
+
+  <div class="dicas">
+    <h2>Veja as dicas </h2>
+    <select id="dicas" onchange="verificar()">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="5">7</option>
+      <option value="6">8</option>
+      <option value="7">9</option>
+      <option value="8">10</option>
+      <option value="9">11</option>
+      <option value="10">12</option>
+      <option value="11">13</option>
+      <option value="12">14</option>
+      <option value="13">15</option>
+      <option value="14">16</option>
+      <option value="15">17</option>
+      <option value="16">18</option>
+    </select><br>
+  </div>
+
+  <div class="lista" id="Dicass" style="display: none;">
+    <ul id="Lista_dicas"></ul>
+  </div>
+
   <table>
     <!-- PRIMEIRA LINHA -->
     <tr>
@@ -256,7 +288,7 @@
       <td id="chip_p"></td>
       <td class="vazio" id=""></td>
       <td class="vazio" id=""></td>
-      <td class="vazio"id=""></td>
+      <td class="vazio" id=""></td>
       <td class="vazio" id=""></td>
       <td class="vazio" id=""></td>
       <td class="vazio" id=""></td>
@@ -296,7 +328,7 @@
       <td class="vazio" id=""></td>
       <td id="threads_e"></td>
       <td class="vazio" id=""></td>
-      <td class="vazio"id=""></td>
+      <td class="vazio" id=""></td>
     </tr>
     <tr>
       <!-- LINHA 12 -->
@@ -467,162 +499,333 @@
       <td class="vazio" id=""></td>
     </tr>
   </table>
-<script>
-  function verificapalavra(){
-    var palavra = (input_palavra.value.toUpperCase());
+</body>
 
-    if (palavra == "RAM"){
-      ram_r.innerHTML = `R`
-      ram_a.innerHTML = `A`
-      ram_m.innerHTML = `M`
-    }else if (palavra == "ROM"){
-      ram_r.innerHTML = `R`
-      rom_o.innerHTML = `O`
-      rom_m.innerHTML = `M`
-    }else if ( palavra == "DMA"){
-      dma_d.innerHTML = `D`
-      rom_m.innerHTML = `M`
-      dma_a.innerHTML = `A`
-    }else if (palavra == "MEMÓRIA DE MASSA"){
-      ram_m.innerHTML = `M`
-      memoria_e.innerHTML = `E`
-      memoria_m.innerHTML = `M`
-      memoria_o.innerHTML = `Ó`
-      memoria_r.innerHTML = `R`
-      memoria_i.innerHTML = `I`
-      memoria_a.innerHTML = `A`
 
-      memoria_d.innerHTML = `D`
-      memoria_de_e.innerHTML = `E`
+  <script>
 
-      memoria_massa_m.innerHTML = `M`
-      memoria_massa_a.innerHTML = `A`
-      memoria_s.innerHTML = `S`
-      memoria_ss.innerHTML = `S`
-      memoria_massa_aa.innerHTML = `A`
 
-    }else if (palavra == "EPROM"){
-      memoria_e.innerHTML = `E`
-      eprom_p.innerHTML = `P`
-      eprom_r.innerHTML = `R`
-      eprom_o.innerHTML = `O`
-      eprom_m.innerHTML = `M`
+    function verificapalavra() {
+      // var palavra = (input_palavra.value);
 
-    }else if (palavra == "ADDRESS BUS"){
-      address_bus_a.innerHTML = `A`;
-      address_bus_d.innerHTML = `D`;
-      address_bus_dd.innerHTML = `D`;
-      address_bus_r.innerHTML = `R`;
-      address_bus_e.innerHTML = `E`;
-      address_bus_s.innerHTML = `S`;
-      address_bus_ss.innerHTML = `S`;
-        
-      address_bus_b.innerHTML = `B`;
-      address_bus_u.innerHTML = `U`;
-      address_bus_sss.innerHTML = `S`;
+      var palavra = document.getElementById('input_palavra').value;
+      var inputElement = document.getElementById('input_palavra');
 
-    }else if (palavra == "DUAL CORE"){
-      memoria_d.innerHTML = `D`
-      dual_core_u.innerHTML = `U`
-      dual_core_a.innerHTML = `A`
-      dual_core_l.innerHTML = `L`
 
-      dual_core_c.innerHTML = `C`
-      dual_core_o.innerHTML = `O`
-      dual_core_r.innerHTML = `R`
-      dual_core_e.innerHTML = `E`
-    }else if (palavra == "REGISTRADORES"){
-      registradores_r.innerHTML = `R`;
-      registradores_e.innerHTML = `E`;
-      registradores_g.innerHTML = `G`;
-      registradores_i.innerHTML = `I`;
-      registradores_s.innerHTML = `S`;
-      registradores_t.innerHTML = `T`;
-      registradores_rr.innerHTML = `R`;
-      registradores_a.innerHTML = `A`;
-      registradores_d.innerHTML = `D`;
-      registradores_o.innerHTML = `O`;
-      registradores_rrr.innerHTML = `R`;
-      registradores_es.innerHTML = `E`;
-      registradores_ss.innerHTML = `S`;
 
-    }else if(palavra == "DATA BUS"){
-      data_bus_d.innerHTML = `D`;
-      memoria_massa_a.innerHTML = `A`;
-      data_bus_t.innerHTML = `T`;
-      data_bus_a.innerHTML = `A`;
 
-      data_bus_b.innerHTML = `B`;
-      data_bus_u.innerHTML = `U`;
-      data_bus_s.innerHTML = `S`;
+      if (palavra == "ram" || palavra == "RAM") {
+        ram_r.innerHTML = `R`
+        ram_a.innerHTML = `A`
+        ram_m.innerHTML = `M`
 
-    }else if(palavra == "FLASH"){
-      flash_f.innerHTML = `F`;
-      flash_l.innerHTML = `L`;
-      flash_a.innerHTML = `A`;
-      memoria_ss.innerHTML = `S`;
-      flash_h.innerHTML = `H`;
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
 
-    }else if(palavra == "CACHE"){
-    cache_c.innerHTML = `C`
-    memoria_massa_aa.innerHTML = `A`
-    cache_cc.innerHTML = `C`
-    cache_h.innerHTML = `H`
-    cache_e.innerHTML = `E`
 
-  }else if(palavra == "QUAD CORE"){
-    quad_core_q.innerHTML = `Q`
-    quad_core_u.innerHTML = `U`
-    address_bus_a.innerHTML = `A`
-    quad_core_d.innerHTML = `D`
+      } else if (palavra == "rom" || palavra == "ROM") {
+        ram_r.innerHTML = `R`
+        rom_o.innerHTML = `O`
+        rom_m.innerHTML = `M`
 
-    dual_core_c.innerHTML = `C`
-    quad_core_o.innerHTML = `O`
-    registradores_r.innerHTML = `R`
-    quad_core_e.innerHTML = `E`
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
 
-  }else if(palavra == "THREADS"){
-    threads_t.innerHTML = `T`
-    threads_h.innerHTML = `H`
-    registradores_rrr.innerHTML = `R`
-    threads_e.innerHTML = `E`
-    threads_a.innerHTML = `A`
-    threads_d.innerHTML = `D`
-    threads_s.innerHTML = `S`
+      } else if (palavra == "dma" || palavra == "DMA") {
+        dma_d.innerHTML = `D`
+        rom_m.innerHTML = `M`
+        dma_a.innerHTML = `A`
 
-  }else if(palavra == "ULA"){
-    address_bus_u.innerHTML = `U`
-    ula_l.innerHTML = `L`
-    ula_a.innerHTML = `A`
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
 
-  }else if(palavra == "CPU"){
-    cpu_c.innerHTML = `C`
-    cpu_p.innerHTML = `P`
-    quad_core_u.innerHTML = `U`
+      } else if (palavra == "memória de massa" || palavra == "MEMÓRIA DE MASSA") {
+        ram_m.innerHTML = `M`
+        memoria_e.innerHTML = `E`
+        memoria_m.innerHTML = `M`
+        memoria_o.innerHTML = `Ó`
+        memoria_r.innerHTML = `R`
+        memoria_i.innerHTML = `I`
+        memoria_a.innerHTML = `A`
 
-  }else if(palavra == "I5"){
-    memoria_i.innerHTML = `I`
-    i5_5.innerHTML = `5`
+        memoria_d.innerHTML = `D`
+        memoria_de_e.innerHTML = `E`
 
-  }else if(palavra == "I7"){
-    registradores_i.innerHTML = `I`
-    i7_7.innerHTML = `7`
+        memoria_massa_m.innerHTML = `M`
+        memoria_massa_a.innerHTML = `A`
+        memoria_s.innerHTML = `S`
+        memoria_ss.innerHTML = `S`
+        memoria_massa_aa.innerHTML = `A`
 
-  }else if(palavra == "CHIP SELECT"){
-    chip_c.innerHTML = `C`
-    chip_h.innerHTML = `H`
-    chip_i.innerHTML = `I`
-    chip_p.innerHTML = `P`
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
 
-    select_s.innerHTML = `S`
-    select_e.innerHTML = `E`
-    flash_l.innerHTML = `L`
-    select_ee.innerHTML = `E`
-    select_c.innerHTML = `C`
-    select_t.innerHTML = `T`
-  }
-    else{
-      alert("Palavra Inserida Errada!");
-    }
-  }
-</script>
+      } else if (palavra == "eprom" || palavra == "EPROM") {
+        memoria_e.innerHTML = `E`
+        eprom_p.innerHTML = `P`
+        eprom_r.innerHTML = `R`
+        eprom_o.innerHTML = `O`
+        eprom_m.innerHTML = `M`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+
+      } else if (palavra == "address bus" || palavra == "ADDRESS BUS") {
+        address_bus_a.innerHTML = `A`;
+        address_bus_d.innerHTML = `D`;
+        address_bus_dd.innerHTML = `D`;
+        address_bus_r.innerHTML = `R`;
+        address_bus_e.innerHTML = `E`;
+        address_bus_s.innerHTML = `S`;
+        address_bus_ss.innerHTML = `S`;
+
+        address_bus_b.innerHTML = `B`;
+        address_bus_u.innerHTML = `U`;
+        address_bus_sss.innerHTML = `S`;
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+
+      } else if (palavra == "dual core" || palavra == "DUAL CORE") {
+        memoria_d.innerHTML = `D`
+        dual_core_u.innerHTML = `U`
+        dual_core_a.innerHTML = `A`
+        dual_core_l.innerHTML = `L`
+
+        dual_core_c.innerHTML = `C`
+        dual_core_o.innerHTML = `O`
+        dual_core_r.innerHTML = `R`
+        dual_core_e.innerHTML = `E`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "registradores" || palavra == "REGISTRADORES") {
+        registradores_r.innerHTML = `R`;
+        registradores_e.innerHTML = `E`;
+        registradores_g.innerHTML = `G`;
+        registradores_i.innerHTML = `I`;
+        registradores_s.innerHTML = `S`;
+        registradores_t.innerHTML = `T`;
+        registradores_rr.innerHTML = `R`;
+        registradores_a.innerHTML = `A`;
+        registradores_d.innerHTML = `D`;
+        registradores_o.innerHTML = `O`;
+        registradores_rrr.innerHTML = `R`;
+        registradores_es.innerHTML = `E`;
+        registradores_ss.innerHTML = `S`;
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+
+      } else if (palavra == "data bus" || palavra == "DATA BUS") {
+        data_bus_d.innerHTML = `D`;
+        memoria_massa_a.innerHTML = `A`;
+        data_bus_t.innerHTML = `T`;
+        data_bus_a.innerHTML = `A`;
+
+        data_bus_b.innerHTML = `B`;
+        data_bus_u.innerHTML = `U`;
+        data_bus_s.innerHTML = `S`;
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "flash" || palavra == "FLASH") {
+        flash_f.innerHTML = `F`;
+        flash_l.innerHTML = `L`;
+        flash_a.innerHTML = `A`;
+        memoria_ss.innerHTML = `S`;
+        flash_h.innerHTML = `H`;
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "cache" || palavra == "CACHE") {
+        cache_c.innerHTML = `C`
+        memoria_massa_aa.innerHTML = `A`
+        cache_cc.innerHTML = `C`
+        cache_h.innerHTML = `H`
+        cache_e.innerHTML = `E`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "quad core" || palavra == "QUAD CORE") {
+        quad_core_q.innerHTML = `Q`
+        quad_core_u.innerHTML = `U`
+        address_bus_a.innerHTML = `A`
+        quad_core_d.innerHTML = `D`
+
+        dual_core_c.innerHTML = `C`
+        quad_core_o.innerHTML = `O`
+        registradores_r.innerHTML = `R`
+        quad_core_e.innerHTML = `E`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "threads" || palavra == "THREADS") {
+        threads_t.innerHTML = `T`
+        threads_h.innerHTML = `H`
+        registradores_rrr.innerHTML = `R`
+        threads_e.innerHTML = `E`
+        threads_a.innerHTML = `A`
+        threads_d.innerHTML = `D`
+        threads_s.innerHTML = `S`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "ula" || palavra == "ULA") {
+        address_bus_u.innerHTML = `U`
+        ula_l.innerHTML = `L`
+        ula_a.innerHTML = `A`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "cpu" || palavra == "CPU") {
+        cpu_c.innerHTML = `C`
+        cpu_p.innerHTML = `P`
+        quad_core_u.innerHTML = `U`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "i5" || palavra == "I5") {
+        memoria_i.innerHTML = `I`
+        i5_5.innerHTML = `5`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "i7" || palavra == "I7") {
+        registradores_i.innerHTML = `I`
+        i7_7.innerHTML = `7`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+
+      } else if (palavra == "chip select" || palavra == "CHIP SELECT") {
+        chip_c.innerHTML = `C`
+        chip_h.innerHTML = `H`
+        chip_i.innerHTML = `I`
+        chip_p.innerHTML = `P`
+
+        select_s.innerHTML = `S`
+        select_e.innerHTML = `E`
+        flash_l.innerHTML = `L`
+        select_ee.innerHTML = `E`
+        select_c.innerHTML = `C`
+        select_t.innerHTML = `T`
+
+        inputElement.classList.remove('error');
+        inputElement.classList.add('valid');
+      }
+      else {
+
+        alert("Palavra Inserida Errada!");
+
+        inputElement.classList.remove('valid');
+        inputElement.classList.add('error');
+
+      }}
+
+
+      function verificar() {
+        var selectElement = document.getElementById('dicas');
+        var DicassElement = document.getElementById('Dicass');
+        var Lista_dicasElement = document.getElementById('Lista_dicas');
+
+        Lista_dicasElement.innerHTML = ''; // Limpar conteúdo anterior
+
+        if (selectElement.value === '1') {
+          Lista_dicasElement.innerHTML = `<p> 1- Memória somente para leitura <p>`;
+        }
+        else if (selectElement.value === '2') {
+          Lista_dicasElement.innerHTML = `<p>  2- Tem como função armazenar grandes quantidades de informações <p>`;
+        }
+        else if (selectElement.value === '3') {
+          Lista_dicasElement.innerHTML = ` <p>  3-Memória de acesso aleatório <p><br>`;
+        }
+        else if (selectElement.value === '4') {
+          Lista_dicasElement.innerHTML = `<p> 4- Permite que o dispositivo de rede mova os dados do pacote diretamente <br>para a memória do sitema, reduzindo
+        a utilização da CPU<br><br> <p>`;
+        }
+        else if (selectElement.value === '5') {
+          Lista_dicasElement.innerHTML = `
+                <p> 5- é capaz de armazenar as informações, para serem recuperadas e utilizadas posteriormente, mesmo depois de
+        alimentação ter sido interrompida <br><p>`;
+
+        } else if (selectElement.value === '6') {
+          Lista_dicasElement.innerHTML = `
+                <p> 6- Processador que possui quatro nucleos dentro da mesma CPU<p>`;
+        } else if (selectElement.value === '7') {
+          Lista_dicasElement.innerHTML = `
+                <p>  7- O componente recebe um determinado volume de dados em um padrão binário e tem a função de responder <br> a
+        esse volume processando a informação com base em instruções armazenadas em sua memória interna<br><br>`;
+        } else if (selectElement.value === '8') {
+          Lista_dicasElement.innerHTML = `
+          8- Implementa as operações lógicas (NOT, AND, OR, XOR) e aritméticas <br>geralmente adição, subtração,
+        multiplicação, divisão<br><br>`;
+        } else if (selectElement.value === '9') {
+          Lista_dicasElement.innerHTML = `
+          9- Seis núcleos e 12 threads, com um clock que vai de 2,9GHz a 4,3GHz. São 12MB de memória cache com o padrão
+        DDR4-2666. <BR>O lado negativo é que ele não tem não tem placa de vídeo integrada e, assim, o usuário que optar
+        por ele vai precisar comprar também uma GPU dedicada<br><br>`;
+        }
+        else if (selectElement.value === '10') {
+          Lista_dicasElement.innerHTML = `
+          10- Barramento que transportam os sinais usados para indicar o endereço de posições da memória do
+        computador<br><br>`;
+        }
+        else if (selectElement.value === '11') {
+          Lista_dicasElement.innerHTML = `
+          11- Entrada de controle de muitos circuitos integrados<br><br>`;
+        }
+        else if (selectElement.value === '12') {
+          Lista_dicasElement.innerHTML = `
+          12- É um pequeno programa que trabalha como um subsistema, <BR>sendo uma forma de um processo se autodividir em
+        dua ou mais tarefas<br><br>`;
+        }
+        else if (selectElement.value === '13') {
+          Lista_dicasElement.innerHTML = `
+          13- Um processador que possui dois núcleos`;
+        }
+        else if (selectElement.value === '14') {
+          Lista_dicasElement.innerHTML = `
+          14-é um processador de 8 núcleos e 8 threads que consume 95W. A frequência base de clock é de 3,6GHz e chega a
+        4,9GHz com o boost,<br> valor alto e semelhante com as velocidades das CPUs de gerações mais atuais. A CPU
+        possui placa de vídeo integrada UHD Intel 630.<br><br>`;
+        }
+        else if (selectElement.value === '15') {
+          Lista_dicasElement.innerHTML = `
+          15-Correspode a uma memória local rápida do microprocessador, destinada ao armazenamento de dados e instruções e
+        atuam como entradas e saídas para as operações da CPU`;
+        }
+        else if (selectElement.value === '16') {
+          Lista_dicasElement.innerHTML = `
+          16- Descreve o sitema responsável pela transmissão de dados entre<br> os componentes de uma rede, <br><br>`;
+        }
+        else if (selectElement.value === '17') {
+          Lista_dicasElement.innerHTML = `
+          17- é uma tecnologia de armazenamento de dados que usa uma memória não volátil`;
+        }
+        else if (selectElement.value === '17') {
+          Lista_dicasElement.innerHTML = `
+          18-É uma espécie de biblioteca que existe dentro de computadores e dispositivos móveis`;
+        }
+
+
+        if (selectElement.value !== 'none') {
+          DicassElement.style.display = 'block';
+        } else {
+          DicassElement.style.display = 'none';
+        }
+      }
+    
+  </script>

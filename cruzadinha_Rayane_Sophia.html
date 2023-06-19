@@ -497,8 +497,9 @@
         </tr>
         <tr>
       </table>
-      <div class="lista" id="Dicass" style="display: none;">
+      <div class="lista" id="styleDicas" style="display: none;">
         <ul id="Lista_dicas"></ul>
+         <!-- // será a nossa dica atual -->
       </div>
   </section>
 </body>
@@ -726,7 +727,7 @@
   function mostradica() {
   // Obtém o elemento select e o elemento onde a dica será exibida
   var selectDicas = document.getElementById('dicas'); /*Guarda a referência para o elemento HTML <select> com o id*/
-  var divDica = document.getElementById('Dicass');
+  var divDica = document.getElementById('styleDicas');  /*passa a estilização de none (não redeniza) e block (redeniza um bloco)*/
   var dica_atual = document.getElementById('Lista_dicas');
 
   var lista_dicas = [
